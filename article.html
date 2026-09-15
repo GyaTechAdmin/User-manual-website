@@ -1,141 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Article Title – Get Your Admission Manual</title>
-  <meta name="description" content="Step-by-step guide on how to use Get Your Admission. Video walkthroughs and detailed instructions included." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide - Get Your Admission</title>
+  <meta name="description" content="Step-by-step Get Your Admission guide with a matching video walkthrough.">
+  <meta name="theme-color" content="#F3F5F8">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="article-page">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ═══════════════════ NAVBAR ═══════════════════ -->
-  <header class="navbar">
+  <header class="site-header">
     <div class="nav-inner">
       <a href="index.html" class="brand" id="nav-brand">
-        <span class="brand-icon">G</span>
-        <span class="brand-text">Get Your<br/>Admission</span>
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span class="brand-name">Get Your Admission</span>
       </a>
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html" class="nav-link active" id="nav-home">Manual Home</a>
-        <a href="student-signup.html" class="nav-link" id="nav-students">For Students</a>
-        <a href="institute-signup.html" class="nav-link" id="nav-colleges">For Institutes</a>
-        <a href="videos.html" class="nav-link" id="nav-videos">Video Tutorials</a>
-      </nav>
-      <div class="nav-right">
-        <div class="search-bar" id="nav-search-bar">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" placeholder="Search the manual…" id="nav-search-input" />
-        </div>
-        <a href="index.html" class="btn-outline" id="nav-back-home">Back to Home</a>
-      </div>
-      <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Menu</span>
       </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="student-signup.html" id="nav-students">For Students</a>
+        <a href="institute-signup.html" id="nav-colleges">For Institutes</a>
+        <a href="videos.html" id="nav-videos">Video Tutorials</a>
+      </nav>
     </div>
   </header>
 
-  <!-- ═══════════════════ BREADCRUMB ═══════════════════ -->
   <div class="breadcrumb-bar" id="breadcrumb-bar">
     <div class="container">
-      <nav class="breadcrumb" id="breadcrumb-nav">
-        <a href="index.html" id="bc-home">Manual Home</a>
-        <span class="bc-sep">/</span>
-        <span id="bc-current">Audience or Category</span>
+      <nav class="crumb breadcrumb" id="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="index.html" id="bc-home">Home</a>
+        <span aria-hidden="true">/</span>
+        <span id="bc-current">Guide</span>
       </nav>
     </div>
   </div>
 
-  <!-- ═══════════════════ ARTICLE LAYOUT ═══════════════════ -->
-  <div class="article-layout container" id="article-layout">
+  <main id="main">
+    <div class="article-layout container" id="article-layout">
+      <article class="article-content" id="article-content">
+        <h1 class="article-title" id="article-title">How to use this guide</h1>
+        <p class="article-lead" id="article-lead">Follow the steps on the left. Use the video on the right (or above on a phone) if you want to watch the same flow.</p>
 
-    <!-- LEFT: Main content -->
-    <article class="article-content" id="article-content">
+        <h2 class="content-h2" id="section-overview">Overview</h2>
+        <p id="overview-text">This page is a template for a single topic. Keep the title short, the steps focused, and the video matched to the same task.</p>
 
-      <h1 class="article-title" id="article-title">Article Title Goes Here</h1>
-      <p class="article-lead" id="article-lead">A short one or two sentence summary of what this guide teaches the reader.</p>
-
-      <!-- Overview -->
-      <h2 class="content-h2" id="section-overview">Overview</h2>
-      <p id="overview-text">Replace this paragraph with an introduction to the topic. Explain why it matters and what the user will be able to do after following the guide.</p>
-
-      <div class="tip-box" id="tip-box">
-        <strong>Tip:</strong> Use this highlighted box for important notes, prerequisites, or warnings.
-      </div>
-
-      <!-- Steps -->
-      <h2 class="content-h2" id="section-steps">Step-by-step instructions</h2>
-
-      <ol class="steps-list" id="steps-list">
-        <li class="step-item" id="step-1">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h3 class="step-title">Do the first thing</h3>
-            <p class="step-desc">Explain the first action the user should take. Keep each step focused on a single action.</p>
-          </div>
-        </li>
-        <li class="step-item" id="step-2">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h3 class="step-title">Do the second thing</h3>
-            <p class="step-desc">Continue with the next action. Add screenshots or code blocks here if needed.</p>
-          </div>
-        </li>
-        <li class="step-item" id="step-3">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h3 class="step-title">Do the third thing</h3>
-            <p class="step-desc">Wrap up the process and describe what success looks like.</p>
-          </div>
-        </li>
-      </ol>
-
-      <!-- Video Walkthrough note -->
-      <h2 class="content-h2" id="section-video">Video walkthrough</h2>
-      <p id="video-note">Watch the matching GetYourAdmission tutorial on the right (or above on mobile). Use the step-by-step playlist under the player to follow the guide in order.</p>
-
-      <!-- Related Topics -->
-      <h2 class="content-h2" id="section-related">Related topics</h2>
-      <ul class="related-list" id="related-list">
-        <li><a href="#" id="related-1">Related article one</a></li>
-        <li><a href="#" id="related-2">Related article two</a></li>
-        <li><a href="#" id="related-3">Related article three</a></li>
-      </ul>
-
-      <!-- Need more help -->
-      <h2 class="content-h2" id="section-help">Need more help?</h2>
-      <p id="help-text">If you are still stuck, contact support or visit the <a href="article.html?cat=help" id="help-link">Help &amp; Support</a> page.</p>
-
-    </article>
-
-    <!-- RIGHT: Video sidebar -->
-    <aside class="video-sidebar" id="video-sidebar" data-video-player="auto">
-
-      <div class="video-featured" id="video-featured">
-        <button type="button" data-video-expand class="expand-btn">Watch larger</button>
-        <div class="video-embed" data-video-frame>
-          <iframe src="https://www.youtube.com/embed/4Xk7mC6EQkM?rel=0" title="How to Register &amp; Create an Account | GetYourAdmission" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="tip-box" id="tip-box">
+          <strong>Note:</strong> Have any required documents or login details ready before you start.
         </div>
-        <div class="video-info" id="video-info">
-          <p class="video-title" id="video-main-title" data-video-title>How to Register &amp; Create an Account</p>
-          <p class="video-desc" id="video-main-desc" data-video-desc>Complete step-by-step tutorial on how to register and create your account on the GetYourAdmission platform.</p>
+
+        <h2 class="content-h2" id="section-steps">Steps</h2>
+        <ol class="steps-list" id="steps-list">
+          <li class="step-item" id="step-1">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3 class="step-title">Open the matching screen</h3>
+              <p class="step-desc">Start from the Get Your Admission page named in the title.</p>
+            </div>
+          </li>
+          <li class="step-item" id="step-2">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3 class="step-title">Complete the required fields</h3>
+              <p class="step-desc">Fill only what the form asks for. Save before you leave the page.</p>
+            </div>
+          </li>
+          <li class="step-item" id="step-3">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3 class="step-title">Confirm the result</h3>
+              <p class="step-desc">You should see a confirmation, or the next screen in the flow.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h2 class="content-h2" id="section-video">Video</h2>
+        <p id="video-note">The playlist under the player follows the same order as the written steps.</p>
+
+        <h2 class="content-h2" id="section-related">Related</h2>
+        <ul class="related-list" id="related-list">
+          <li><a href="student-signup.html" id="related-1">Student sign up</a></li>
+          <li><a href="institute-signup.html" id="related-2">Institute sign up</a></li>
+          <li><a href="videos.html" id="related-3">Video tutorials</a></li>
+        </ul>
+
+        <p class="help-line" id="help-text">If you are still stuck, <a href="videos.html" id="help-link">watch the video tutorials</a>.</p>
+      </article>
+
+      <aside class="video-sidebar" id="video-sidebar" data-video-player="auto">
+        <div class="video-featured video-card" id="video-featured">
+          <button type="button" data-video-expand class="expand-btn">Watch larger</button>
+          <div class="video-embed" data-video-frame>
+            <iframe src="https://www.youtube.com/embed/4Xk7mC6EQkM?rel=0" title="How to Register and Create an Account" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="video-info" id="video-info">
+            <p class="video-title" id="video-main-title" data-video-title>How to Register and Create an Account</p>
+            <p class="video-desc" id="video-main-desc" data-video-desc>Step-by-step tutorial on how to register and create your account.</p>
+          </div>
         </div>
-      </div>
+        <div class="more-videos" id="more-videos">
+          <h3 class="more-title">Step-by-step videos</h3>
+          <div data-video-list></div>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-      <div class="more-videos" id="more-videos">
-        <h3 class="more-title">Step-by-step videos</h3>
-        <div data-video-list></div>
-      </div>
-    </aside>
-
-  </div><!-- /article-layout -->
-
-  <!-- ═══════════════════ FOOTER ═══════════════════ -->
-  <footer class="footer" id="site-footer">
-    <p>© 2026 Get Your Admission. User manual template. Replace this footer with your own links and copyright.</p>
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer-row">
+      <p>© 2026 Get Your Admission</p>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
   </footer>
 
   <script src="videos.js"></script>

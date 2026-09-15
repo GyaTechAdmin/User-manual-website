@@ -64,7 +64,7 @@
       {
         id: 'iNrMt24h8F0',
         title: 'How Your Institute Profile Becomes Public',
-        description: "Welcome to the GetYourAdmission Institute Guide! You've set up your profile and added your courses — now what? This video explains the final verification process and how your institute becomes publicly visible to students on the platform.",
+        description: "After your profile and courses are ready, this video covers verification and how your institute becomes visible to students.",
         url: 'https://youtu.be/iNrMt24h8F0'
       }
     ]
@@ -130,30 +130,30 @@
     var style = document.createElement('style');
     style.id = 'gya-lightbox-css';
     style.textContent =
-      '#gya-lightbox{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;}' +
+      '#gya-lightbox{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;padding:16px;font-family:inherit;}' +
       '#gya-lightbox[hidden]{display:none !important;}' +
-      '.gya-lb-backdrop{position:absolute;inset:0;background:rgba(7,11,22,.82);backdrop-filter:blur(10px);}' +
-      '.gya-lb-dialog{position:relative;width:min(1080px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;background:#0B1220;border-radius:22px;box-shadow:0 40px 80px -24px rgba(0,0,0,.55);color:#fff;}' +
-      '.gya-lb-close{position:absolute;top:12px;right:12px;z-index:2;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:22px;line-height:1;}' +
+      '.gya-lb-backdrop{position:absolute;inset:0;background:rgba(12,16,26,.78);}' +
+      '.gya-lb-dialog{position:relative;width:min(1080px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;background:#171C28;border-radius:16px;box-shadow:0 28px 64px -24px rgba(0,0,0,.55);color:#fff;}' +
+      '.gya-lb-close{position:absolute;top:10px;right:10px;z-index:2;width:40px;height:40px;border:0;border-radius:10px;background:rgba(255,255,255,.12);color:#fff;cursor:pointer;font-size:22px;line-height:1;}' +
       '.gya-lb-close:hover{background:rgba(255,255,255,.22);}' +
-      '.gya-lb-player{aspect-ratio:16/9;background:#000;overflow:hidden;border-radius:22px 22px 0 0;}' +
+      '.gya-lb-player{aspect-ratio:16/9;background:#0F141F;overflow:hidden;border-radius:16px 16px 0 0;}' +
       '.gya-lb-player iframe{width:100%;height:100%;border:0;display:block;}' +
-      '.gya-lb-meta{padding:20px 22px 10px;}' +
-      '.gya-lb-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#93C5FD;margin-bottom:8px;}' +
-      '.gya-lb-meta h3{margin:0 0 8px;font-size:22px;line-height:1.25;}' +
-      '.gya-lb-meta p{margin:0;color:rgba(255,255,255,.62);font-size:14px;line-height:1.6;}' +
-      '.gya-lb-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 22px 8px;}' +
-      '.gya-lb-controls button{border:0;background:rgba(255,255,255,.1);color:#fff;border-radius:10px;padding:10px 14px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;}' +
+      '.gya-lb-meta{padding:16px 18px 8px;}' +
+      '.gya-lb-kicker{display:inline-flex;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#8AABF8;margin-bottom:8px;}' +
+      '.gya-lb-meta h3{margin:0 0 6px;font-size:1.2rem;line-height:1.25;letter-spacing:-.02em;font-weight:600;}' +
+      '.gya-lb-meta p{margin:0;color:rgba(255,255,255,.62);font-size:14px;line-height:1.5;}' +
+      '.gya-lb-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px 8px;}' +
+      '.gya-lb-controls button{border:0;background:rgba(255,255,255,.1);color:#fff;border-radius:10px;padding:10px 14px;min-height:40px;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;}' +
       '.gya-lb-controls button:hover{background:rgba(255,255,255,.18);}' +
       '.gya-lb-controls button:disabled{opacity:.35;cursor:default;}' +
-      '.gya-lb-step{font-size:13px;font-weight:700;color:rgba(255,255,255,.7);}' +
-      '.gya-lb-queue{display:flex;gap:10px;overflow-x:auto;padding:8px 22px 22px;}' +
+      '.gya-lb-step{font-size:13px;font-weight:600;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums;}' +
+      '.gya-lb-queue{display:flex;gap:10px;overflow-x:auto;padding:8px 18px 18px;-webkit-overflow-scrolling:touch;}' +
       '.gya-lb-qitem{flex:none;width:168px;border:0;padding:0;background:transparent;color:#fff;text-align:left;cursor:pointer;font-family:inherit;}' +
       '.gya-lb-qitem img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block;border:2px solid transparent;}' +
-      '.gya-lb-qitem.active img{border-color:#3B6DF0;}' +
+      '.gya-lb-qitem.active img{border-color:#6B93F5;}' +
       '.gya-lb-qitem span{display:block;margin-top:6px;font-size:12px;font-weight:600;line-height:1.35;color:rgba(255,255,255,.82);}' +
       'body.gya-lb-open{overflow:hidden;}' +
-      '@media (max-width:700px){.gya-lb-dialog{width:100%;border-radius:16px;}.gya-lb-player{border-radius:16px 16px 0 0;}.gya-lb-meta h3{font-size:18px;}.gya-lb-qitem{width:132px;}}';
+      '@media (max-width:700px){.gya-lb-dialog{width:100%;border-radius:14px;}.gya-lb-player{border-radius:14px 14px 0 0;}.gya-lb-meta h3{font-size:1.05rem;}.gya-lb-qitem{width:132px;}.gya-lb-controls{flex-wrap:wrap;}}';
     document.head.appendChild(style);
 
     var wrap = document.createElement('div');
