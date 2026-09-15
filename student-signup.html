@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Sign Up Guide — Get Your Admission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-50:#EFF6FF; --blue-100:#DBEAFE; --blue-500:#3B6DF0; --blue-600:#2554DB; --blue-700:#1B3FB0;
+    --ink:#0B1220; --ink-soft:#334155; --muted:#64748B;
+    --border:#E6EBF3; --border-soft:#EEF2F8; --card:#FFFFFF; --bg:#F6F8FC;
+    --radius-lg:20px; --radius-md:14px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 1px 0 rgba(15,23,42,.03);
+    --shadow-hover:0 20px 40px -18px rgba(37,84,219,.28);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1100px 460px at 12% -10%, rgba(59,109,240,.08), transparent 60%), var(--bg);
+    color:var(--ink);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Manrope',sans-serif;letter-spacing:-.01em;}
+  a{text-decoration:none;color:inherit;}
+  :focus-visible{outline:2px solid var(--blue-600);outline-offset:2px;}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;
+    background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);
+    position:sticky;top:0;z-index:30;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16.5px;color:var(--ink);font-family:'Manrope',sans-serif;}
+  .logo-mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(155deg,var(--blue-500),var(--blue-700));
+    color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;
+    box-shadow:0 6px 14px -6px rgba(37,84,219,.55);}
+  nav{display:flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--border-soft);padding:4px;border-radius:12px;}
+  nav a{font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:8px 14px;border-radius:8px;}
+  nav a.active{color:var(--blue-700);background:var(--blue-50);}
+  .header-right{display:flex;align-items:center;gap:12px;}
+  .search-box{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);
+    border-radius:10px;padding:9px 14px;font-size:13px;color:var(--muted);min-width:200px;}
+  .btn-primary{background:linear-gradient(155deg,var(--blue-500),var(--blue-700));color:#fff;font-weight:700;
+    font-size:13.5px;padding:10px 18px;border-radius:10px;border:none;cursor:pointer;
+    box-shadow:0 8px 18px -8px rgba(37,84,219,.55);}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:36px 40px 90px;}
+  .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px;display:flex;gap:8px;align-items:center;}
+  .breadcrumb a{color:var(--blue-700);font-weight:600;}
+
+  .article-head{max-width:760px;margin-bottom:44px;}
+  .badge-row{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .badge{font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--blue-700);
+    background:var(--blue-50);padding:5px 11px;border-radius:999px;border:1px solid var(--blue-100);}
+  .time-est{font-size:12.5px;color:var(--muted);font-weight:600;display:flex;align-items:center;gap:5px;}
+  .article-head h1{font-size:36px;font-weight:800;margin:0 0 14px;line-height:1.18;}
+  .article-head p{font-size:16px;color:var(--muted);line-height:1.65;margin:0;}
+
+  .content-grid{display:grid;grid-template-columns:1fr 380px;gap:36px;align-items:start;}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);padding:32px;}
+  .card + .card{margin-top:24px;}
+  .card h2{font-size:19px;font-weight:800;margin:0 0 14px;}
+  .card > p{font-size:14.5px;color:var(--ink-soft);line-height:1.7;margin:0;}
+
+  .tip-box{display:flex;gap:12px;background:var(--blue-50);border:1px solid var(--blue-100);
+    border-radius:var(--radius-md);padding:18px 20px;margin-top:18px;}
+  .tip-box svg{width:19px;height:19px;stroke:var(--blue-700);flex:none;margin-top:1px;}
+  .tip-box p{margin:0;font-size:13.75px;color:var(--ink-soft);line-height:1.6;}
+  .tip-box strong{color:var(--blue-700);}
+
+  .steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;}
+  .step{display:flex;gap:18px;padding:22px 0;border-top:1px dashed var(--border);}
+  .step:first-child{border-top:none;padding-top:6px;}
+  .step-num{width:32px;height:32px;border-radius:50%;background:linear-gradient(155deg,var(--blue-500),var(--blue-700));
+    color:#fff;font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;
+    display:flex;align-items:center;justify-content:center;flex:none;
+    box-shadow:0 6px 14px -6px rgba(37,84,219,.5);}
+  .step-body h3{font-size:15.5px;font-weight:700;margin:2px 0 6px;}
+  .step-body p{font-size:13.75px;color:var(--muted);line-height:1.65;margin:0;}
+  .step-body .doc-list{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .step-body .doc-list li{font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:8px;font-weight:500;}
+  .step-body .doc-list li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue-500);flex:none;}
+
+  /* Sidebar */
+  .video-card{background:var(--ink);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);position:relative;}
+  .expand-btn{position:absolute;top:12px;right:12px;z-index:2;border:0;background:rgba(255,255,255,.14);color:#fff;
+    font-size:12px;font-weight:700;padding:7px 10px;border-radius:8px;cursor:pointer;font-family:inherit;}
+  .expand-btn:hover{background:rgba(255,255,255,.24);}
+  .video-thumb{aspect-ratio:16/9;background:#0B1220;position:relative;overflow:hidden;}
+  .video-thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-info{padding:18px 20px;}
+  .video-info h4{color:#fff;font-size:14.5px;margin:0 0 6px;font-weight:700;}
+  .video-info p{color:rgba(255,255,255,.55);font-size:12.5px;margin:0;line-height:1.5;}
+
+  .more-videos{margin-top:22px;}
+  .more-videos h4{font-size:13px;font-weight:800;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;margin:0 0 12px;}
+  .mv-item{display:flex;gap:12px;align-items:center;padding:10px 8px;margin:0 -8px;border:none;border-top:1px solid var(--border-soft);
+    background:transparent;width:calc(100% + 16px);text-align:left;cursor:pointer;font-family:inherit;border-radius:10px;}
+  .mv-item:first-of-type{border-top:none;}
+  .mv-item:hover .mv-text p{color:var(--blue-700);}
+  .mv-item.active{background:var(--blue-50);}
+  .mv-item.active .mv-text p{color:var(--blue-700);}
+  .mv-thumb{width:72px;height:48px;border-radius:8px;background:var(--blue-50);flex:none;position:relative;overflow:hidden;}
+  .mv-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+  .mv-step{position:absolute;left:4px;bottom:4px;background:rgba(11,18,32,.82);color:#fff;
+    font-size:9px;font-weight:800;letter-spacing:.04em;padding:2px 5px;border-radius:4px;font-family:'Manrope',sans-serif;}
+  .mv-text p{margin:0;font-size:13px;font-weight:600;color:var(--ink);line-height:1.35;}
+  .mv-text span{font-size:11.5px;color:var(--muted);}
+
+  .related-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;}
+  .related-list li a{display:flex;align-items:center;justify-content:space-between;
+    padding:13px 4px;font-size:13.75px;font-weight:600;color:var(--ink-soft);border-top:1px solid var(--border-soft);}
+  .related-list li:first-child a{border-top:none;}
+  .related-list li a:hover{color:var(--blue-700);}
+  .related-list svg{width:14px;height:14px;stroke:var(--muted);}
+
+  .help-box{background:linear-gradient(175deg,#fff,var(--blue-50));border:1px solid var(--blue-100);}
+  .help-box h2{font-size:16px;}
+  .help-box p{font-size:13.75px;}
+  .help-box a{color:var(--blue-700);font-weight:700;}
+
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12.5px;
+    border-top:1px solid var(--border-soft);background:#fff;}
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .content-grid{grid-template-columns:1fr;}
+    header{padding:14px 18px;}
+    .wrap{padding:24px 18px 60px;}
+    .article-head h1{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><div class="logo-mark">G</div>Get Your Admission</div>
+  <nav>
+    <a href="index.html">Manual Home</a>
+    <a href="student-signup.html" class="active">For Students</a>
+    <a href="institute-signup.html">For Institutes</a>
+    <a href="videos.html">Video Tutorials</a>
+  </nav>
+  <div class="header-right">
+    <div class="search-box">🔍 Search the manual...</div>
+    <button class="btn-primary">Get Started</button>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="breadcrumb"><a href="index.html">Manual Home</a> / <span>For Students</span> / <span style="color:var(--ink);font-weight:600;">Student Sign Up</span></div>
+
+  <div class="article-head">
+    <div class="badge-row">
+      <span class="badge">For Students</span>
+      <span class="time-est">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        3 min read
+      </span>
+    </div>
+    <h1>How to create your student account</h1>
+    <p>Sign up in minutes, verify your email or phone, and complete your profile so you can start browsing and applying to institutes.</p>
+  </div>
+
+  <div class="content-grid">
+
+    <!-- Main column -->
+    <div>
+      <div class="card">
+        <h2>Overview</h2>
+        <p>Student sign-up is quick — no documents needed. Create an account, verify it, and fill in a short profile so we can match you with relevant institutes and courses.</p>
+        <div class="tip-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <p><strong>Before you start:</strong> have your education details (current level and stream of interest) ready — it speeds up profile setup in step 3.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Step-by-step instructions</h2>
+        <ul class="steps">
+          <li class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3>Register with email or phone</h3>
+              <p>Go to Student Sign Up and enter your name, and either an email address or phone number, plus a password.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3>Verify your account</h3>
+              <p>Enter the OTP sent to your email or phone. This confirms the account is really yours and unlocks the rest of sign-up.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3>Complete your student profile</h3>
+              <p>Add your current education level, subjects or streams you're interested in, and preferred locations. This helps us surface relevant institutes first.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h3>Browse and save institutes</h3>
+              <p>Explore institutes and courses that match your profile. Tap the save icon on any listing to keep it in your shortlist for later.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h3>Apply to your first program</h3>
+              <p>When you're ready, open a course page and hit Apply. You can track every application's status from your dashboard.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card help-box">
+        <h2>Need more help?</h2>
+        <p style="margin-top:8px;">If you didn't receive your verification code or can't access your account, visit the <a href="#">Help &amp; Support</a> page for troubleshooting steps.</p>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div data-video-player="students">
+      <div class="video-card">
+        <button type="button" data-video-expand class="expand-btn">Watch larger</button>
+        <div class="video-thumb" data-video-frame>
+          <iframe src="https://www.youtube.com/embed/4Xk7mC6EQkM?rel=0" title="How to Register &amp; Create an Account | GetYourAdmission" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="video-info">
+          <h4 data-video-title>How to Register &amp; Create an Account</h4>
+          <p data-video-desc>Complete step-by-step tutorial on how to register and create your account on the GetYourAdmission platform.</p>
+        </div>
+      </div>
+
+      <div class="more-videos">
+        <h4>Step-by-step videos</h4>
+        <div data-video-list></div>
+      </div>
+
+      <div class="card" style="margin-top:22px;">
+        <h2 style="font-size:15px;margin-bottom:6px;">Related topics</h2>
+        <ul class="related-list">
+          <li><a href="student-signup.html?v=i6rqc9wB_z4">How to apply for courses directly<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+          <li><a href="student-signup.html?v=kKJqR4Aw7nA">How to apply to specific institutes<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+          <li><a href="videos.html#student-tutorials">All student video tutorials<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>© 2026 Get Your Admission. User manual template — Student Sign Up Guide.</footer>
+
+<script src="videos.js"></script>
+</body>
+</html>

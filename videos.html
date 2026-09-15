@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Tutorials — Get Your Admission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-50:#EFF6FF; --blue-100:#DBEAFE; --blue-500:#3B6DF0; --blue-600:#2554DB; --blue-700:#1B3FB0;
+    --ink:#0B1220; --ink-soft:#334155; --muted:#64748B;
+    --border:#E6EBF3; --border-soft:#EEF2F8; --card:#FFFFFF; --bg:#F6F8FC;
+    --radius-lg:20px; --radius-md:14px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 1px 0 rgba(15,23,42,.03);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1100px 460px at 12% -10%, rgba(59,109,240,.08), transparent 60%), var(--bg);
+    color:var(--ink);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Manrope',sans-serif;letter-spacing:-.01em;}
+  a{text-decoration:none;color:inherit;}
+  :focus-visible{outline:2px solid var(--blue-600);outline-offset:2px;}
+
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 40px;
+    background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-soft);
+    position:sticky;top:0;z-index:30;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16.5px;color:var(--ink);font-family:'Manrope',sans-serif;}
+  .logo-mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(155deg,var(--blue-500),var(--blue-700));
+    color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;
+    box-shadow:0 6px 14px -6px rgba(37,84,219,.55);}
+  nav{display:flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--border-soft);padding:4px;border-radius:12px;}
+  nav a{font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:8px 14px;border-radius:8px;}
+  nav a.active{color:var(--blue-700);background:var(--blue-50);}
+  .btn-primary{background:linear-gradient(155deg,var(--blue-500),var(--blue-700));color:#fff;font-weight:700;
+    font-size:13.5px;padding:10px 18px;border-radius:10px;border:none;cursor:pointer;
+    box-shadow:0 8px 18px -8px rgba(37,84,219,.55);}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:36px 40px 90px;}
+  .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:18px;display:flex;gap:8px;align-items:center;}
+  .breadcrumb a{color:var(--blue-700);font-weight:600;}
+  .page-head{max-width:720px;margin-bottom:28px;}
+  .badge{font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--blue-700);
+    background:var(--blue-50);padding:5px 11px;border-radius:999px;border:1px solid var(--blue-100);}
+  .page-head h1{font-size:40px;font-weight:800;margin:14px 0;line-height:1.12;}
+  .page-head p{font-size:16px;color:var(--muted);line-height:1.65;margin:0;}
+
+  .tabs{display:inline-flex;gap:4px;background:#fff;border:1px solid var(--border);padding:4px;border-radius:12px;margin-bottom:32px;}
+  .tabs button{border:0;background:transparent;color:var(--ink-soft);font-weight:700;font-size:13.5px;
+    padding:9px 16px;border-radius:8px;cursor:pointer;font-family:inherit;}
+  .tabs button.active{background:var(--blue-50);color:var(--blue-700);}
+
+  .series{margin-bottom:42px;}
+  .series-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap;}
+  .series-head h2{font-size:22px;font-weight:800;margin:0 0 4px;}
+  .series-head p{margin:0;color:var(--muted);font-size:14px;}
+  .guide-link{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--blue-700);}
+  .guide-link svg{width:15px;height:15px;}
+
+  .vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .vid-card{display:flex;flex-direction:column;text-align:left;border:1px solid var(--border);background:#fff;
+    border-radius:18px;overflow:hidden;padding:0;cursor:pointer;font-family:inherit;color:inherit;
+    box-shadow:var(--shadow-card);transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;}
+  .vid-card:hover{transform:translateY(-4px);border-color:var(--blue-100);
+    box-shadow:0 20px 40px -18px rgba(37,84,219,.28);}
+  .vid-card-media{position:relative;aspect-ratio:16/9;background:#0B1220;display:block;overflow:hidden;}
+  .vid-card-media img{width:100%;height:100%;object-fit:cover;display:block;}
+  .vid-card-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,transparent 40%,rgba(11,18,32,.45));}
+  .vid-card-play svg{width:56px;height:56px;fill:#fff;filter:drop-shadow(0 8px 16px rgba(0,0,0,.35));
+    background:rgba(37,84,219,.92);border-radius:50%;padding:16px;box-sizing:border-box;}
+  .vid-card:hover .vid-card-play svg{transform:scale(1.06);}
+  .vid-card-step{position:absolute;left:12px;top:12px;background:rgba(11,18,32,.82);color:#fff;
+    font-size:11px;font-weight:800;letter-spacing:.04em;padding:5px 8px;border-radius:8px;font-family:'Manrope',sans-serif;}
+  .vid-card-body{display:flex;flex-direction:column;gap:6px;padding:16px 16px 18px;}
+  .vid-card-kicker{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-700);}
+  .vid-card-body strong{font-size:15.5px;line-height:1.35;font-weight:800;font-family:'Manrope',sans-serif;}
+  .vid-card-desc{font-size:13px;color:var(--muted);line-height:1.5;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+
+  footer{text-align:center;padding:26px;color:var(--muted);font-size:12.5px;
+    border-top:1px solid var(--border-soft);background:#fff;}
+
+  @media (max-width:980px){
+    .vid-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:900px){
+    nav{display:none;}
+    header{padding:14px 18px;}
+    .wrap{padding:24px 18px 60px;}
+    .page-head h1{font-size:30px;}
+  }
+  @media (max-width:620px){
+    .vid-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html"><div class="logo-mark">G</div>Get Your Admission</a>
+  <nav>
+    <a href="index.html">Manual Home</a>
+    <a href="student-signup.html">For Students</a>
+    <a href="institute-signup.html">For Institutes</a>
+    <a href="videos.html" class="active">Video Tutorials</a>
+  </nav>
+  <a class="btn-primary" href="student-signup.html">Get Started</a>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb"><a href="index.html">Manual Home</a> / <span style="color:var(--ink);font-weight:600;">Video Tutorials</span></div>
+
+  <div class="page-head">
+    <span class="badge">Watch in order</span>
+    <h1>Click a video to watch it large in the center.</h1>
+    <p>Ten short GetYourAdmission walkthroughs. Pick a series, click any thumbnail, and the player expands in the middle of the screen with next / previous controls.</p>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button type="button" class="active" data-video-tab="all">All tutorials</button>
+    <button type="button" data-video-tab="students">Students</button>
+    <button type="button" data-video-tab="institutes">Institutes</button>
+  </div>
+
+  <section class="series" id="student-tutorials" data-video-panel="students">
+    <div class="series-head">
+      <div>
+        <span class="badge">For Students</span>
+        <h2>Student tutorials</h2>
+        <p>Register, apply, upload documents, then learn the dashboard.</p>
+      </div>
+      <a class="guide-link" href="student-signup.html">Written student guide
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="vid-grid" data-video-gallery="students"></div>
+  </section>
+
+  <section class="series" id="institute-tutorials" data-video-panel="institutes">
+    <div class="series-head">
+      <div>
+        <span class="badge">For Institutes</span>
+        <h2>Institute tutorials</h2>
+        <p>Register, set up your profile, add courses, and go live.</p>
+      </div>
+      <a class="guide-link" href="institute-signup.html">Written institute guide
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="vid-grid" data-video-gallery="institutes"></div>
+  </section>
+</div>
+
+<footer>© 2026 Get Your Admission. User manual — Video Tutorials.</footer>
+<script src="videos.js"></script>
+</body>
+</html>

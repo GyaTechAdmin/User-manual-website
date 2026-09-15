@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up Guide — Get Your Admission</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-50:#EFF6FF;
+    --blue-100:#DBEAFE;
+    --blue-500:#3B6DF0;
+    --blue-600:#2554DB;
+    --blue-700:#1B3FB0;
+    --ink:#0B1220;
+    --ink-soft:#334155;
+    --muted:#64748B;
+    --border:#E6EBF3;
+    --border-soft:#EEF2F8;
+    --card:#FFFFFF;
+    --bg:#F6F8FC;
+    --radius-lg:20px;
+    --radius-md:14px;
+    --shadow-card:0 1px 2px rgba(15,23,42,.04), 0 1px 0 rgba(15,23,42,.03);
+    --shadow-hover:0 20px 40px -18px rgba(37,84,219,.28);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:
+      radial-gradient(1100px 460px at 12% -10%, rgba(59,109,240,.10), transparent 60%),
+      radial-gradient(900px 420px at 100% 0%, rgba(37,84,219,.07), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Manrope',sans-serif;letter-spacing:-.01em;}
+  a{text-decoration:none;color:inherit;}
+  :focus-visible{outline:2px solid var(--blue-600);outline-offset:2px;}
+
+  /* Header */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 40px;background:rgba(255,255,255,.86);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+    position:sticky;top:0;z-index:30;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16.5px;color:var(--ink);font-family:'Manrope',sans-serif;}
+  .logo-mark{
+    width:32px;height:32px;border-radius:9px;
+    background:linear-gradient(155deg,var(--blue-500),var(--blue-700));
+    color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;
+    box-shadow:0 6px 14px -6px rgba(37,84,219,.55);
+  }
+  nav{display:flex;align-items:center;gap:4px;background:#fff;border:1px solid var(--border-soft);padding:4px;border-radius:12px;}
+  nav a{font-size:13.5px;font-weight:600;color:var(--ink-soft);padding:8px 14px;border-radius:8px;}
+  nav a.active{color:var(--blue-700);background:var(--blue-50);}
+  .header-right{display:flex;align-items:center;gap:12px;}
+  .search-box{
+    display:flex;align-items:center;gap:8px;background:#fff;
+    border:1px solid var(--border);border-radius:10px;padding:9px 14px;
+    font-size:13px;color:var(--muted);min-width:200px;
+  }
+  .btn-primary{
+    background:linear-gradient(155deg,var(--blue-500),var(--blue-700));
+    color:#fff;font-weight:700;font-size:13.5px;
+    padding:10px 18px;border-radius:10px;border:none;cursor:pointer;
+    box-shadow:0 8px 18px -8px rgba(37,84,219,.55);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 22px -8px rgba(37,84,219,.6);}
+
+  /* Hero */
+  .hero{padding:76px 40px 12px;text-align:center;max-width:900px;margin:0 auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--border);color:var(--blue-700);
+    font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+    padding:6px 14px;border-radius:999px;margin-bottom:22px;
+    box-shadow:var(--shadow-card);
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--blue-500);}
+  .hero h1{
+    font-size:46px;line-height:1.12;margin:0 0 18px;font-weight:800;color:var(--ink);
+  }
+  .hero h1 .accent{
+    background:linear-gradient(120deg,var(--blue-600),var(--blue-500));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p{
+    max-width:560px;margin:0 auto 36px;color:var(--muted);font-size:16px;line-height:1.65;
+  }
+  .hero-search{
+    max-width:600px;margin:0 auto 48px;display:flex;gap:8px;
+    background:#fff;border:1px solid var(--border);border-radius:14px;padding:7px;
+    box-shadow:var(--shadow-card);
+  }
+  .hero-search input{
+    flex:1;border:none;outline:none;padding:11px 14px;font-size:14px;background:transparent;color:var(--ink);
+  }
+  .hero-search input::placeholder{color:#94A3B8;}
+  .hero-search button{
+    background:linear-gradient(155deg,var(--blue-500),var(--blue-700));
+    color:#fff;border:none;border-radius:9px;
+    padding:0 22px;font-weight:700;font-size:13.5px;cursor:pointer;
+  }
+
+  /* Path preview stepper (signature element) */
+  .stepper{
+    display:flex;align-items:center;justify-content:center;gap:0;
+    margin:0 auto 8px;max-width:640px;
+  }
+  .stepper .node{
+    display:flex;flex-direction:column;align-items:center;gap:8px;flex:none;width:104px;
+  }
+  .stepper .node .circle{
+    width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid var(--border);
+    display:flex;align-items:center;justify-content:center;color:var(--blue-600);
+    box-shadow:var(--shadow-card);
+  }
+  .stepper .node .circle svg{width:19px;height:19px;stroke:currentColor;}
+  .stepper .node span{font-size:12px;font-weight:700;color:var(--ink-soft);}
+  .stepper .line{
+    flex:1;height:1.5px;background:repeating-linear-gradient(90deg,var(--border) 0 6px, transparent 6px 11px);
+    margin-top:-24px;
+  }
+
+  /* Sections */
+  section.paths{padding:56px 40px 8px;max-width:1180px;margin:0 auto;}
+  .section-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;gap:16px;flex-wrap:wrap;}
+  .section-head h2{font-size:23px;margin:0 0 4px;font-weight:800;}
+  .section-head p{color:var(--muted);font-size:14px;margin:0;}
+
+  .path-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:860px;
+  }
+  .path-card{
+    position:relative;
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:30px 26px 26px;display:flex;flex-direction:column;gap:16px;
+    box-shadow:var(--shadow-card);
+    transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+  }
+  .path-card:hover{
+    box-shadow:var(--shadow-hover);
+    border-color:var(--blue-100);transform:translateY(-3px);
+  }
+  .path-top{display:flex;align-items:flex-start;justify-content:space-between;}
+  .path-icon{
+    width:46px;height:46px;border-radius:13px;
+    background:linear-gradient(155deg,var(--blue-50),var(--blue-100));
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .path-icon svg{width:22px;height:22px;stroke:var(--blue-700);}
+  .step-index{font-family:'Manrope',sans-serif;font-size:34px;font-weight:800;color:var(--border);line-height:1;}
+  .path-card h3{margin:0;font-size:18.5px;font-weight:800;}
+  .path-card > p.desc{margin:0;color:var(--muted);font-size:13.75px;line-height:1.6;}
+  .path-steps{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;border-top:1px dashed var(--border);padding-top:16px;}
+  .path-steps li{
+    font-size:13px;color:var(--ink-soft);display:flex;align-items:center;gap:10px;font-weight:500;
+  }
+  .path-steps li .num{
+    width:18px;height:18px;border-radius:50%;background:var(--blue-50);color:var(--blue-700);
+    font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .path-link{
+    margin-top:auto;padding-top:8px;font-size:13.75px;font-weight:700;color:var(--blue-700);
+    display:flex;align-items:center;gap:6px;
+  }
+  .path-link svg{width:15px;height:15px;transition:transform .15s ease;}
+  .path-card:hover .path-link svg{transform:translateX(3px);}
+  .path-card.emphasis{
+    border-color:var(--blue-200,#C7D9FF);
+    background:linear-gradient(175deg,#fff 0%,var(--blue-50) 145%);
+  }
+  .path-card.emphasis .path-icon{background:linear-gradient(155deg,var(--blue-500),var(--blue-700));}
+  .path-card.emphasis .path-icon svg{stroke:#fff;}
+  .badge{
+    align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--blue-700);
+  }
+
+  /* Secondary row */
+  .secondary{padding:20px 40px 80px;max-width:1180px;margin:0 auto;}
+  .secondary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px;}
+  .mini-card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);
+    padding:20px;display:flex;flex-direction:column;gap:12px;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .mini-card:hover{border-color:var(--blue-100);transform:translateY(-2px);}
+  .mini-icon{
+    width:36px;height:36px;border-radius:10px;background:var(--blue-50);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .mini-icon svg{width:18px;height:18px;stroke:var(--blue-700);}
+  .mini-card h4{margin:0;font-size:14px;font-weight:700;}
+  .mini-card p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.55;}
+
+  footer{
+    text-align:center;padding:26px;color:var(--muted);font-size:12.5px;
+    border-top:1px solid var(--border-soft);background:#fff;
+  }
+
+  @media (max-width:900px){
+    nav{display:none;}
+    .path-grid{grid-template-columns:1fr;}
+    .secondary-grid{grid-template-columns:repeat(2,1fr);}
+    .hero h1{font-size:32px;}
+    header{padding:14px 18px;}
+    .hero{padding:48px 18px;}
+    section.paths, .secondary{padding-left:18px;padding-right:18px;}
+    .stepper{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">G</div>
+    Get Your Admission
+  </div>
+  <nav>
+    <a href="index.html" class="active">Manual Home</a>
+    <a href="student-signup.html">For Students</a>
+    <a href="institute-signup.html">For Institutes</a>
+    <a href="videos.html">Video Tutorials</a>
+  </nav>
+  <div class="header-right">
+    <div class="search-box">🔍 Search the manual...</div>
+    <button class="btn-primary">Get Started</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow"><span class="dot"></span> User Manual · Sign Up Guide</div>
+  <h1>Create your account<br>in <span class="accent">just a few steps.</span></h1>
+  <p>Pick the path that matches you — institute or student — and follow along with a step-by-step guide and a short video walkthrough.</p>
+  <div class="hero-search">
+    <input type="text" placeholder="Search sign-up steps, e.g. 'verify email'...">
+    <button>Search</button>
+  </div>
+
+  <div class="stepper" aria-hidden="true">
+    <div class="node">
+      <div class="circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg></div>
+      <span>Institute</span>
+    </div>
+    <div class="line"></div>
+    <div class="node">
+      <div class="circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg></div>
+      <span>Student</span>
+    </div>
+  </div>
+</section>
+
+<section class="paths">
+  <div class="section-head">
+    <div>
+      <h2>Choose your sign-up path</h2>
+      <p>Each path has its own step-by-step guide and video walkthrough.</p>
+    </div>
+  </div>
+
+  <div class="path-grid">
+
+    <!-- Institute -->
+    <div class="path-card emphasis">
+      <div class="path-top">
+        <div class="path-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V9l8-6 8 6v12M9 21v-6h6v6"/></svg>
+        </div>
+        <span class="step-index">01</span>
+      </div>
+      <div>
+        <span class="badge">For Institutes</span>
+        <h3 style="margin-top:6px;">Institute Sign Up</h3>
+      </div>
+      <p class="desc">Register your institute, verify credentials, and set up your profile to start listing courses.</p>
+      <ul class="path-steps">
+        <li><span class="num">1</span>Create an institute account</li>
+        <li><span class="num">2</span>Submit verification documents</li>
+        <li><span class="num">3</span>Set up your institute profile</li>
+      </ul>
+      <a class="path-link" href="institute-signup.html">View institute guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+    <!-- Student -->
+    <div class="path-card">
+      <div class="path-top">
+        <div class="path-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>
+        </div>
+        <span class="step-index">02</span>
+      </div>
+      <div>
+        <span class="badge">For Students</span>
+        <h3 style="margin-top:6px;">Student Sign Up</h3>
+      </div>
+      <p class="desc">Create your student account, verify your email, and build your profile to start applying.</p>
+      <ul class="path-steps">
+        <li><span class="num">1</span>Register with email or phone</li>
+        <li><span class="num">2</span>Verify your account</li>
+        <li><span class="num">3</span>Complete your student profile</li>
+      </ul>
+      <a class="path-link" href="student-signup.html">View student guide <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+
+  </div>
+</section>
+
+<section class="secondary">
+  <div class="section-head" style="margin-bottom:4px;">
+    <div><h2 style="font-size:18px;">Related help</h2></div>
+  </div>
+  <div class="secondary-grid">
+
+    <a class="mini-card" href="videos.html">
+      <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="m10 15 5-3-5-3z"/></svg></div>
+      <h4>Video Tutorials</h4>
+      <p>Short walkthroughs for each sign-up path.</p>
+    </a>
+
+    <div class="mini-card">
+      <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div>
+      <h4>Account Settings</h4>
+      <p>Update your profile, password, or notifications.</p>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h4>Verification Help</h4>
+      <p>What to do if your documents are rejected.</p>
+    </div>
+
+    <div class="mini-card">
+      <div class="mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4M12 17h.01"/></svg></div>
+      <h4>Help &amp; Support</h4>
+      <p>Still stuck? Contact the support team.</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2026 Get Your Admission. User manual template — Sign Up Guide.</footer>
+
+</body>
+</html>
