@@ -41,3 +41,61 @@
   };
   if (cat && labels[cat]) bc.textContent = labels[cat];
 })();
+
+/* ============================================================
+   COLLAPSIBLE STEP ACCORDIONS
+   ============================================================ */
+(function () {
+  var collapsibles = document.querySelectorAll('.steps > li.is-collapsible');
+  if (!collapsibles.length) return;
+
+  collapsibles.forEach(function (stepEl) {
+    var header = stepEl.querySelector('.step-header');
+    var dropdown = stepEl.querySelector('.step-dropdown');
+    var stepList = stepEl.closest('.steps');
+    var videoGroup = stepList ? stepList.getAttribute('data-video-group') || 'students' : 'students';
+    if (!header || !dropdown) return;
+
+    function toggleStep(forceOpen) {
+      var shouldOpen = typeof forceOpen === 'boolean' ? forceOpen : dropdown.hasAttribute('hidden');
+      if (shouldOpen) {
+        var iframe = dropdown.querySelector('iframe[data-src]');
+        if (iframe && !iframe.hasAttribute('src')) {
+          iframe.setAttribute('src', iframe.getAttribute('data-src'));
+        }
+        dropdown.removeAttribute('hidden');
+        stepEl.classList.add('is-open');
+        header.setAttribute('aria-expanded', 'true');
+      } else {
+        dropdown.setAttribute('hidden', '');
+        stepEl.classList.remove('is-open');
+        header.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    header.addEventListener('click', function (e) {
+      // Don't toggle if clicking on an interactive element inside header
+      if (e.target.closest('a, button')) return;
+      toggleStep();
+    });
+
+    header.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleStep();
+      }
+    });
+
+    // Wire "Watch larger" button in step dropdown
+    var expandBtn = stepEl.querySelector('[data-step-video-expand]');
+    if (expandBtn) {
+      expandBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var videoIdx = parseInt(expandBtn.getAttribute('data-step-video-expand'), 10) || 0;
+        if (typeof window.GYA_openVideo === 'function') {
+          window.GYA_openVideo(videoGroup, videoIdx);
+        }
+      });
+    }
+  });
+})();

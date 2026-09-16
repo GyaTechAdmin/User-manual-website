@@ -6,7 +6,7 @@
   <title>Student sign up - Get Your Admission</title>
   <meta name="description" content="How to create a student account on Get Your Admission: register, verify, and complete your profile.">
   <meta name="theme-color" content="#F3F5F8">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
   <header class="site-header">
     <div class="nav-inner">
       <a href="index.html" class="brand">
-        <span class="brand-mark" aria-hidden="true">G</span>
+        <img class="brand-logo" src="favicon.svg?v=2" alt="">
         <span class="brand-name">Get Your Admission</span>
       </a>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -44,68 +44,266 @@
 
       <header class="guide-head">
         <p class="kicker">For students</p>
-        <h1>How to create your student account</h1>
-        <p class="lede">Register, verify your email or phone, then finish a short profile so you can apply.</p>
+        <h1>Student account and application guide</h1>
+        <p class="lede">Learn how to create your account, apply to courses and institutes, upload documents, and manage your student dashboard.</p>
         <p class="note"><strong>Before you start:</strong> keep your education level and preferred stream ready.</p>
       </header>
 
       <div class="guide-layout">
         <article>
           <ol class="steps">
-            <li>
-              <span class="step-index">1</span>
-              <div>
-                <h2>Register with email or phone</h2>
-                <p>Open Student Sign Up. Enter your name, an email or phone number, and a password.</p>
+            <li class="step-item is-collapsible" id="step-1">
+              <div class="step-header" role="button" tabindex="0" aria-expanded="false" aria-controls="step-1-dropdown" aria-label="Step 1: Register with email or phone. Click to expand video tutorial and description.">
+                <span class="step-index">1</span>
+                <div class="step-preview" aria-hidden="true">
+                  <img src="https://i.ytimg.com/vi/4Xk7mC6EQkM/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+                  <span class="step-preview-play"></span>
+                </div>
+                <div class="step-header-text">
+                  <h2>Register with email or phone</h2>
+                  <p>Open Student Sign Up. Enter your name, an email or phone number, and a password.</p>
+                </div>
+              </div>
+              <div class="step-dropdown" id="step-1-dropdown" hidden>
+                <div class="step-dropdown-content">
+                  <div class="step-video-card">
+                    <div class="step-video-frame">
+                      <button type="button" class="step-expand-btn" data-step-video-expand="0" aria-label="Watch Step 1 video larger in lightbox">Watch larger</button>
+                      <iframe data-src="https://www.youtube.com/embed/4Xk7mC6EQkM?rel=0&amp;modestbranding=1" title="How to Register &amp; Create an Account | GetYourAdmission" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="step-video-caption">
+                      <span class="step-video-tag">Step 1 of 5 Video Guide</span>
+                      <h3 class="step-video-title">How to Register &amp; Create an Account</h3>
+                    </div>
+                  </div>
+
+                  <div class="step-desc-box">
+                    <h3 class="step-desc-heading">Brief Walkthrough &amp; Instructions</h3>
+                    <p class="step-desc-intro">
+                      Watch the video above for a complete walkthrough of student registration. In this initial step, you establish your secure student credentials to unlock the admissions portal, search certified colleges, and submit program applications.
+                    </p>
+
+                    <div class="step-checklist">
+                      <h4 class="step-checklist-title">Key steps to follow:</h4>
+                      <ol class="step-substeps">
+                        <li>
+                          <strong>1. Access Sign Up:</strong> Click on <em>Student Sign Up</em> from the top navigation bar or the home screen.
+                        </li>
+                        <li>
+                          <strong>2. Enter Basic Details:</strong> Type your full name as it appears on your official educational certificates.
+                        </li>
+                        <li>
+                          <strong>3. Provide Email or Phone:</strong> Enter your active email address or mobile phone number to receive admission alerts and verification codes.
+                        </li>
+                        <li>
+                          <strong>4. Set a Secure Password:</strong> Choose a strong password (minimum 8 characters with a mix of letters, numbers, and symbols).
+                        </li>
+                        <li>
+                          <strong>5. Agree &amp; Submit:</strong> Check the agreement box to accept terms of service, then click <strong>Create Account</strong> to immediately trigger your verification code for Step 2.
+                        </li>
+                      </ol>
+                    </div>
+
+                    <div class="step-tip-callout">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                      </svg>
+                      <p><strong>Quick tip:</strong> Double-check your mobile number and email before hitting submit so your verification OTP delivers without delay.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <span class="step-index">2</span>
-              <div>
-                <h2>Verify your account</h2>
-                <p>Enter the code sent to you. This unlocks the rest of sign-up.</p>
+            <li class="step-item is-collapsible" id="step-2">
+              <div class="step-header" role="button" tabindex="0" aria-expanded="false" aria-controls="step-2-dropdown" aria-label="Step 2: How to apply for courses directly. Click to expand video tutorial and instructions.">
+                <span class="step-index">2</span>
+                <div class="step-preview" aria-hidden="true">
+                  <img src="https://i.ytimg.com/vi/i6rqc9wB_z4/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+                  <span class="step-preview-play"></span>
+                </div>
+                <div class="step-header-text">
+                  <h2>How to apply for courses directly</h2>
+                  <p>Browse available courses, review the details, and submit an application.</p>
+                </div>
+              </div>
+              <div class="step-dropdown" id="step-2-dropdown" hidden>
+                <div class="step-dropdown-content">
+                  <div class="step-video-card">
+                    <div class="step-video-frame">
+                      <button type="button" class="step-expand-btn" data-step-video-expand="1" aria-label="Watch Step 2 video larger in lightbox">Watch larger</button>
+                      <iframe data-src="https://www.youtube.com/embed/i6rqc9wB_z4?rel=0&amp;modestbranding=1" title="How to Apply for Courses Directly | GetYourAdmission" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="step-video-caption">
+                      <span class="step-video-tag">Step 2 of 5 Video Guide</span>
+                      <h3 class="step-video-title">How to Apply for Courses Directly</h3>
+                    </div>
+                  </div>
+
+                  <div class="step-desc-box">
+                    <h3 class="step-desc-heading">Apply from a course listing</h3>
+                    <p class="step-desc-intro">Use the course listings to compare options and apply directly to the program that fits your goals.</p>
+                    <div class="step-checklist">
+                      <h4 class="step-checklist-title">Key steps to follow:</h4>
+                      <ol class="step-substeps">
+                        <li><strong>1. Browse Courses:</strong> Open the available course listings and use the filters to narrow your choices.</li>
+                        <li><strong>2. Review Details:</strong> Check the course, institute, eligibility, fees, and other important information.</li>
+                        <li><strong>3. Choose a Course:</strong> Open the course you want and select its application option.</li>
+                        <li><strong>4. Confirm Your Information:</strong> Review your profile and provide any requested application details.</li>
+                        <li><strong>5. Submit and Track:</strong> Send the application and monitor its progress from your dashboard.</li>
+                      </ol>
+                    </div>
+                    <div class="step-tip-callout">
+                      <p><strong>Quick tip:</strong> Check the eligibility and required documents before submitting your application.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <span class="step-index">3</span>
-              <div>
-                <h2>Complete your profile</h2>
-                <p>Add your education level, subjects of interest, and preferred locations.</p>
+
+            <li class="step-item is-collapsible" id="step-3">
+              <div class="step-header" role="button" tabindex="0" aria-expanded="false" aria-controls="step-3-dropdown" aria-label="Step 3: How to apply to specific institutes. Click to expand video tutorial and instructions.">
+                <span class="step-index">3</span>
+                <div class="step-preview" aria-hidden="true">
+                  <img src="https://i.ytimg.com/vi/kKJqR4Aw7nA/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+                  <span class="step-preview-play"></span>
+                </div>
+                <div class="step-header-text">
+                  <h2>How to apply to specific institutes</h2>
+                  <p>Find an institute, review its profile and courses, then submit your application.</p>
+                </div>
+              </div>
+              <div class="step-dropdown" id="step-3-dropdown" hidden>
+                <div class="step-dropdown-content">
+                  <div class="step-video-card">
+                    <div class="step-video-frame">
+                      <button type="button" class="step-expand-btn" data-step-video-expand="2" aria-label="Watch Step 3 video larger in lightbox">Watch larger</button>
+                      <iframe data-src="https://www.youtube.com/embed/kKJqR4Aw7nA?rel=0&amp;modestbranding=1" title="How to Apply to Specific Institutes | GetYourAdmission" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="step-video-caption">
+                      <span class="step-video-tag">Step 3 of 5 Video Guide</span>
+                      <h3 class="step-video-title">How to Apply to Specific Institutes</h3>
+                    </div>
+                  </div>
+
+                  <div class="step-desc-box">
+                    <h3 class="step-desc-heading">Apply from an institute profile</h3>
+                    <p class="step-desc-intro">Start with the institute you prefer, explore its available programs, and apply through the institute profile.</p>
+                    <div class="step-checklist">
+                      <h4 class="step-checklist-title">Key steps to follow:</h4>
+                      <ol class="step-substeps">
+                        <li><strong>1. Search Institutes:</strong> Find the college or institute you want to apply to.</li>
+                        <li><strong>2. Open Its Profile:</strong> Review the institute overview and available information.</li>
+                        <li><strong>3. Explore Courses:</strong> Check the programs offered by that institute.</li>
+                        <li><strong>4. Select a Program:</strong> Open your preferred course and choose the application option.</li>
+                        <li><strong>5. Submit and Track:</strong> Confirm your details, submit the application, and follow its status from your dashboard.</li>
+                      </ol>
+                    </div>
+                    <div class="step-tip-callout">
+                      <p><strong>Quick tip:</strong> Review the institute profile and course requirements together before applying.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <span class="step-index">4</span>
-              <div>
-                <h2>Browse and save institutes</h2>
-                <p>Open listings that match your profile and save any you want to revisit.</p>
+
+            <li class="step-item is-collapsible" id="step-4">
+              <div class="step-header" role="button" tabindex="0" aria-expanded="false" aria-controls="step-4-dropdown" aria-label="Step 4: How to upload documents and profile data. Click to expand video tutorial and instructions.">
+                <span class="step-index">4</span>
+                <div class="step-preview" aria-hidden="true">
+                  <img src="https://i.ytimg.com/vi/oDoPvm3bU3w/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+                  <span class="step-preview-play"></span>
+                </div>
+                <div class="step-header-text">
+                  <h2>How to upload documents and profile data</h2>
+                  <p>Complete your student profile and add the documents needed for applications.</p>
+                </div>
+              </div>
+              <div class="step-dropdown" id="step-4-dropdown" hidden>
+                <div class="step-dropdown-content">
+                  <div class="step-video-card">
+                    <div class="step-video-frame">
+                      <button type="button" class="step-expand-btn" data-step-video-expand="3" aria-label="Watch Step 4 video larger in lightbox">Watch larger</button>
+                      <iframe data-src="https://www.youtube.com/embed/oDoPvm3bU3w?rel=0&amp;modestbranding=1" title="How to Upload Documents &amp; Profile Data | GetYourAdmission" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="step-video-caption">
+                      <span class="step-video-tag">Step 4 of 5 Video Guide</span>
+                      <h3 class="step-video-title">How to Upload Documents &amp; Profile Data</h3>
+                    </div>
+                  </div>
+
+                  <div class="step-desc-box">
+                    <h3 class="step-desc-heading">Prepare your application profile</h3>
+                    <p class="step-desc-intro">Keep your personal, educational, and document information complete so institutes can review your applications.</p>
+                    <div class="step-checklist">
+                      <h4 class="step-checklist-title">Key steps to follow:</h4>
+                      <ol class="step-substeps">
+                        <li><strong>1. Open Your Profile:</strong> Go to the profile section from your student account.</li>
+                        <li><strong>2. Add Profile Data:</strong> Complete the requested personal and educational information.</li>
+                        <li><strong>3. Prepare Documents:</strong> Use clear, readable files for the documents requested by your chosen programs.</li>
+                        <li><strong>4. Upload Each File:</strong> Add the correct document in its matching upload field.</li>
+                        <li><strong>5. Save and Review:</strong> Confirm that your information and uploaded files are complete and current.</li>
+                      </ol>
+                    </div>
+                    <div class="step-tip-callout">
+                      <p><strong>Quick tip:</strong> Use clearly named files and check that every document is readable before saving.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
-            <li>
-              <span class="step-index">5</span>
-              <div>
-                <h2>Apply to a program</h2>
-                <p>On a course page, choose Apply. Track status from your dashboard.</p>
+
+            <li class="step-item is-collapsible" id="step-5">
+              <div class="step-header" role="button" tabindex="0" aria-expanded="false" aria-controls="step-5-dropdown" aria-label="Step 5: Student dashboard overview and navigation. Click to expand video tutorial and instructions.">
+                <span class="step-index">5</span>
+                <div class="step-preview" aria-hidden="true">
+                  <img src="https://i.ytimg.com/vi/Gylu0ffhrB0/hqdefault.jpg" alt="" loading="lazy" decoding="async">
+                  <span class="step-preview-play"></span>
+                </div>
+                <div class="step-header-text">
+                  <h2>Student dashboard overview and navigation</h2>
+                  <p>Manage your profile, documents, submitted applications, and account in one place.</p>
+                </div>
+              </div>
+              <div class="step-dropdown" id="step-5-dropdown" hidden>
+                <div class="step-dropdown-content">
+                  <div class="step-video-card">
+                    <div class="step-video-frame">
+                      <button type="button" class="step-expand-btn" data-step-video-expand="4" aria-label="Watch Step 5 video larger in lightbox">Watch larger</button>
+                      <iframe data-src="https://www.youtube.com/embed/Gylu0ffhrB0?rel=0&amp;modestbranding=1" title="Student Dashboard Overview &amp; Navigation | GetYourAdmission" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="step-video-caption">
+                      <span class="step-video-tag">Step 5 of 5 Video Guide</span>
+                      <h3 class="step-video-title">Student Dashboard Overview &amp; Navigation</h3>
+                    </div>
+                  </div>
+
+                  <div class="step-desc-box">
+                    <h3 class="step-desc-heading">Use your student dashboard</h3>
+                    <p class="step-desc-intro">The dashboard gives you one place to maintain your account and follow your admission activity.</p>
+                    <div class="step-checklist">
+                      <h4 class="step-checklist-title">Key areas to review:</h4>
+                      <ol class="step-substeps">
+                        <li><strong>1. Profile:</strong> Review and update your personal and educational information.</li>
+                        <li><strong>2. Applications:</strong> View submitted applications and check their current status.</li>
+                        <li><strong>3. Documents:</strong> Confirm which files are uploaded and replace outdated documents when needed.</li>
+                        <li><strong>4. Navigation:</strong> Use the dashboard sections to move between courses, institutes, and account tools.</li>
+                        <li><strong>5. Account Management:</strong> Keep your contact information and account details current.</li>
+                      </ol>
+                    </div>
+                    <div class="step-tip-callout">
+                      <p><strong>Quick tip:</strong> Check your dashboard regularly for application updates and missing information.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
           </ol>
           <p class="help-line">If you did not get a verification code, <a href="videos.html#student-tutorials">watch the student tutorials</a>.</p>
         </article>
 
-        <aside class="guide-media" data-video-player="students">
-          <div class="video-card">
-            <button type="button" data-video-expand class="expand-btn">Watch larger</button>
-            <div class="video-frame" data-video-frame>
-              <iframe src="https://www.youtube.com/embed/4Xk7mC6EQkM?rel=0" title="How to Register and Create an Account" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-info">
-              <h2 data-video-title>How to Register and Create an Account</h2>
-              <p data-video-desc>Step-by-step tutorial on how to register and create your account.</p>
-            </div>
-          </div>
-          <div class="more-videos">
-            <h2>Step-by-step videos</h2>
-            <div data-video-list></div>
-          </div>
+        <aside class="guide-media">
           <div class="related">
             <h2>Related</h2>
             <a href="student-signup.html?v=i6rqc9wB_z4">Apply for courses directly</a>
