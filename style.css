@@ -32,27 +32,9 @@
   --page-pad: clamp(16px, 4vw, 40px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent: #6B93F5;
-    --accent-hover: #8AABF8;
-    --accent-soft: #1B2744;
-    --ink: #EEF1F6;
-    --ink-soft: #C5CDDA;
-    --muted: #9AA3B2;
-    --bg: #12151C;
-    --surface: #171B23;
-    --card: #1C212C;
-    --line: #2A3140;
-    --line-strong: #3A4356;
-    --shadow: 0 14px 36px -18px rgba(0, 0, 0, 0.55);
-    --shadow-tint: 0 16px 32px -16px rgba(47, 100, 214, 0.32);
-  }
-}
-
 html {
   scroll-behavior: smooth;
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 html, body { overflow-x: clip; max-width: 100%; }
